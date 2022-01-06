@@ -1,0 +1,3 @@
+rootProject.name = "MediaBrowser"
+include ':app'
+include ':mediabrowser'
