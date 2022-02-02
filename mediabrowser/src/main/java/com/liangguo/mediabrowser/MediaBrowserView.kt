@@ -131,9 +131,14 @@ class MediaBrowserView : FrameLayout, PopupInterface, ViewPager.OnPageChangeList
                 TransitionManager.beginDelayedTransition(
                     mediaViewer, TransitionSet()
                         .setDuration(mConfig.animDuration)
+                        //这里有一个现象，如果先添加图片的Transform，则会失效，如果后添加，就能有效。要使图片的过渡生效，就要放在最后一个地方去
                         .addTransition(ChangeBounds())
                         .addTransition(ChangeTransform())
-                        .addTransition(ChangeImageTransform())
+                        .apply {
+                            if (mConfig.showWithImageTransform) {
+                                addTransition(ChangeImageTransform())
+                            }
+                        }
                         .setInterpolator(DecelerateInterpolator(2f))
                         .addListener(object : TransitionListenerAdapter() {
                             override fun onTransitionEnd(transition: Transition) {
@@ -148,9 +153,9 @@ class MediaBrowserView : FrameLayout, PopupInterface, ViewPager.OnPageChangeList
                 )
 
                 //设置SnapView的结束状态
-                animView.scaleType = ImageView.ScaleType.FIT_CENTER
                 animView.translationX = 0f
                 animView.translationY = 0f
+                animView.scaleType = ImageView.ScaleType.FIT_CENTER
                 animView.layoutParams = LayoutParams(mediaViewer.width, mediaViewer.height)
 
                 //为background设置它应有的颜色
@@ -196,7 +201,11 @@ class MediaBrowserView : FrameLayout, PopupInterface, ViewPager.OnPageChangeList
                         .setDuration(mConfig.animDuration)
                         .addTransition(ChangeBounds())
                         .addTransition(ChangeTransform())
-                        .addTransition(ChangeImageTransform())
+                        .apply {
+                            if (mConfig.dismissWithImageTransform) {
+                                addTransition(ChangeImageTransform())
+                            }
+                        }
                         .setInterpolator(DecelerateInterpolator(2f))
                         .addListener(object : TransitionListenerAdapter() {
                             override fun onTransitionEnd(transition: Transition) {

@@ -35,6 +35,7 @@ class FirstActivity : AppCompatActivity(), RecyclerAdapter1.OnItemClickListener 
             .configMediaBrowser {
                 //设置自定义的媒体集
                 mediaList = medias
+                showWithImageTransform = true
                 //查看的起始位置，就是你点的这个item的项
                 startIndex = position
                 //查看的媒体换页了，这时要把recyclerView对应那一项的ImageView返回去，允许为null

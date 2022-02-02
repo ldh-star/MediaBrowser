@@ -6,6 +6,7 @@ import com.liangguo.mediabrowser.R
 import com.liangguo.mediabrowser.config.MediaBrowserConfig
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.core.BasePopupView
+import com.lxj.xpopup.core.ImageViewerPopupView
 
 
 /**

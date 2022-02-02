@@ -46,6 +46,17 @@ class MediaBrowserConfig<Media : Any> {
     var clickToBack = false
 
     /**
+     * 打开时是否添加针对图片ScaleType的过渡动画
+     * 在某些加载图片的场景中，第一次点开某图就会出问题，所以这里就当作是默认为否
+     */
+    var showWithImageTransform = false
+
+    /**
+     * 关闭时是否添加针对图片ScaleType的过渡动画
+     */
+    var dismissWithImageTransform = true
+
+    /**
      * 动画的ImageView的默认ScaleType
      * 当有srcView且srcView为ImageView的时候就用srcView的scaleType
      * 没有的时候就使用默认的scaleType

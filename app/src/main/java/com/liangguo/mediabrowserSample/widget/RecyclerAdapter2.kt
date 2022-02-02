@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.liangguo.mediabrowserSample.R
+import com.liangguo.mediabrowserSample.mediaBrowser.loadMedia
 import com.liangguo.mediabrowserSample.model.MediaBean
 
 
@@ -31,7 +32,7 @@ class RecyclerAdapter2(private val mMedias: MutableList<MediaBean>) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.imageView.setImageResource(mMedias[position].resId)
+        holder.imageView.loadMedia(mMedias[position])
         holder.imageView.setOnClickListener { itemClickListener?.onItemClick(position, mMedias[position]) }
     }
 

@@ -17,6 +17,7 @@ private val mMedias = mutableListOf(
     MediaBean(R.drawable.img_e),
     MediaBean(R.drawable.img_f),
     MediaBean(R.drawable.img_g),
+    MediaBean(-1),
 )
 
 var medias = mutableListOf<MediaBean>().also {
