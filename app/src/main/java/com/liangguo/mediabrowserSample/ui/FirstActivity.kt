@@ -52,7 +52,7 @@ class FirstActivity : AppCompatActivity(), RecyclerAdapter1.OnItemClickListener 
                     { container: ViewGroup, position: Int, media: MediaBean ->
                         loadPageAdapter(container, position, media)
                     }
-            }.show()
+            }.create().show()
 
     }
 

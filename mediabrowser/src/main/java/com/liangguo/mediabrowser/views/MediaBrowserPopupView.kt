@@ -75,10 +75,14 @@ class MediaBrowserPopupView<Media : Any>(context: Context) : BasePopupView(conte
             this
         }
 
+        @Deprecated("已废弃，请从 .show() 迁移到 .create().show() 方法")
         fun show() = run {
             mXPopupBuilder.asCustom(mMediaBrowserPopupView).show()
             this
         }
+
+
+        fun create() = mXPopupBuilder.asCustom(mMediaBrowserPopupView) as MediaBrowserPopupView<Media>
 
     }
 

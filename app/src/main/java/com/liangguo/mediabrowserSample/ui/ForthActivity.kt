@@ -60,8 +60,7 @@ class ForthActivity: AppCompatActivity(), RecyclerAdapter2.OnItemClickListener {
             .configXpopup {
                 //这里可以设置Xpopup.Builder的所有参数
                 hasBlurBg(true)
-            }
-            .show()
+            }.create().show()
 
     }
 
