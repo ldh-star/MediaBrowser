@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.liangguo.mediabrowserSample.bigview.BigImageActivity
 import com.liangguo.mediabrowserSample.ui.FirstActivity
 import com.liangguo.mediabrowserSample.ui.ForthActivity
 import com.liangguo.mediabrowserSample.ui.SecondActivity
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.button2).setOnClickListener(this)
         findViewById<View>(R.id.button3).setOnClickListener(this)
         findViewById<View>(R.id.button4).setOnClickListener(this)
+        findViewById<View>(R.id.button5).setOnClickListener(this)
 
     }
 
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button2 -> startActivity(Intent(this, SecondActivity::class.java))
             R.id.button3 -> startActivity(Intent(this, ThirdActivity::class.java))
             R.id.button4 -> startActivity(Intent(this, ForthActivity::class.java))
+            R.id.button5 -> startActivity(Intent(this, BigImageActivity::class.java))
         }
     }
 
